@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+      	<link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+	    <link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/skeleton.css">
+		<link rel="stylesheet" href="css/style.css">
+      
+      <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+      <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2'></script>
+      <script type='text/javascript' src='js/TileLayer.Grayscale.js'></script>
+	  <script type="text/javascript" src="js/canvasjs.min.js"></script>
+      <script type='text/javascript' src="js/site.js"></script>
+      
+	  <script type="text/javascript">
+			  window.onload = function () {
+			    var chart = new CanvasJS.Chart("shootingChart",
+			    {
+			    
+			      title:{text: ""},
+			      
+			      backgroundColor: "#242226",
+				  axisX:{valueFormatString:"####"},
+			      axisY:{gridThickness: .5,lineThickness: 0},
+			      legend: {
+			       horizontalAlign: "right", // "center" , "right"
+			       verticalAlign: "top",  // "top" , "bottom"
+			       fontSize: 14,
+			       fontFamily: "Raleway",
+			       fontColor: "white",
+			     },
+			      
+			      data: [
+			      {        
+			        type: "column",
+			        color: "#77b2c4",
+			        xValueFormatString: "Shooting Incidents in ####",
+			        showInLegend: true,
+			        legendText: "Shooting Incidents",
+			        fontweight: "bold",
+			        dataPoints: [
+				        {x:1971, y: 810},
+						{x:1972, y: 994},
+						{x:1973, y: 665},
+						{x:1974, y: 526},
+						{x:1975, y: 454},
+						{x:1976, y: 379},
+						{x:1977, y: 434},
+						{x:1978, y: 418},
+						{x:1979, y: 394},
+						{x:1980, y: 425},
+						{x:1981, y: 452},
+						{x:1982, y: 375},
+						{x:1983, y: 349},
+						{x:1984, y: 466},
+						{x:1985, y: 369},
+						{x:1986, y: 346},
+						{x:1987, y: 351},
+						{x:1988, y: 251},
+						{x:1989, y: 329},
+						{x:1990, y: 307},
+						{x:1991, y: 332},
+						{x:1992, y: 279},
+						{x:1993, y: 312},
+						{x:1994, y: 331},
+						{x:1995, y: 345},
+						{x:1996, y: 318},
+						{x:1997, y: 253},
+						{x:1998, y: 249},
+						{x:1999, y: 155},
+						{x:2000, y: 134},
+						{x:2001, y: 136},
+						{x:2002, y: 119},
+						{x:2003, y: 130},
+						{x:2004, y: 114},
+						{x:2005, y: 125},
+						{x:2006, y: 127},
+						{x:2007, y: 111},
+						{x:2008, y: 105},
+						{x:2009, y: 106},
+						{x:2010, y: 92},
+						{x:2011, y: 92},
+						{x:2012, y: 105},
+						{x:2013, y: 81}        
+			        ] },
+			        {type: "line",
+			        color: "#c95454",
+			        xValueFormatString: "Killed in ####",
+			        showInLegend: true,
+			        legendText: "Total Killed",
+			        fontweight: "bold",
+			        markerType: "circle",
+			        markerSize: 5,
+			        dataPoints: [
+				        {x:1971, y: 93},
+						{x:1972, y: 66},
+						{x:1973, y: 58},
+						{x:1974, y: 41},
+						{x:1975, y: 44},
+						{x:1976, y: 25},
+						{x:1977, y: 30},
+						{x:1978, y: 37},
+						{x:1979, y: 28},
+						{x:1980, y: 25},
+						{x:1981, y: 33},
+						{x:1982, y: 33},
+						{x:1983, y: 29},
+						{x:1984, y: 26},
+						{x:1985, y: 11},
+						{x:1986, y: 18},
+						{x:1987, y: 14},
+						{x:1988, y: 24},
+						{x:1989, y: 30},
+						{x:1990, y: 39},
+						{x:1991, y: 27},
+						{x:1992, y: 24},
+						{x:1993, y: 22},
+						{x:1994, y: 29},
+						{x:1995, y: 26},
+						{x:1996, y: 30},
+						{x:1997, y: 20},
+						{x:1998, y: 19},
+						{x:1999, y: 11},
+						{x:2000, y: 14},
+						{x:2001, y: 11},
+						{x:2002, y: 13},
+						{x:2003, y: 14},
+						{x:2004, y: 11},
+						{x:2005, y: 9},
+						{x:2006, y: 13},
+						{x:2007, y: 10},
+						{x:2008, y: 13},
+						{x:2009, y: 12},
+						{x:2010, y: 8},
+						{x:2011, y: 9},
+						{x:2012, y: 16},
+						{x:2013, y: 8}        
+			        ] }
+			        ] 
+			});
+			
+			    chart.render();
+			    
+			    var chart = new CanvasJS.Chart("raceChart",
+	    {
+	      title:{
+	      text: ""
+	      },
+	      axisX: {
+	        valueFormatString:"####",
+	        interval: 1,
+	        intervalType: "year"
+	      },
+	      axisY:{gridThickness: 0,lineThickness: 0},
+	      backgroundColor: "#242226",
+		  legend: {
+		       horizontalAlign: "right", // "center" , "right"
+		       verticalAlign: "top",  // "top" , "bottom"
+		       fontSize: 14,
+		       fontFamily: "Raleway",
+		       fontColor: "white"},
+	      data: [
+	      {
+	        type: "stackedColumn100",
+	        legendText: "White",
+	        showInLegend: "true",
+	        color: "#33475B",
+	        fontweight: "bold",
+	        dataPoints: [
+	        {x:2009, y: 0},
+			{x:2010, y: 2},
+			{x:2011, y: 4},
+			{x:2012, y: 2},
+			{x:2013, y: 0}
+	
+	        ]
+	      },
+	        {
+	        type: "stackedColumn100",
+	        legendText: "Black",
+	        showInLegend: "true",
+	        color: "#deebf7",
+	        fontweight: "bold",
+	        dataPoints: [
+	        {x:2009, y: 8},
+			{x:2010, y: 1},
+			{x:2011, y: 2},
+			{x:2012, y: 11},
+			{x:2013, y: 6}
+	
+	        ]
+	      },
+	        {
+	        type: "stackedColumn100",
+	        legendText: "Hispanic",
+	        showInLegend: "true",
+	        color: "#9ecae1",
+	        fontweight: "bold",
+	        dataPoints: [
+	        {x:2009, y: 4},
+			{x:2010, y: 4},
+			{x:2011, y: 3},
+			{x:2012, y: 2},
+			{x:2013, y: 2}
+	
+	        ]
+	      },
+	        {
+	        type: "stackedColumn100",
+	        legendText: "Asian",
+	        showInLegend: "true",
+	        color: "#3182bd",
+	        fontweight: "bold",
+	        dataPoints: [
+	        {x:2009, y: 0},
+			{x:2010, y: 1},
+			{x:2011, y: 0},
+			{x:2012, y: 1},
+			{x:2013, y: 0},
+	
+	        ]
+	      }
+	
+	      ]
+	    });
+	
+	    chart.render();
+			  }
+	  </script>
+	      	
+      
+   </head>
+
+   <body>
+	     
+   		<!-- Navbar -->
+		<div style="width: 100%; height: 700px; background-image: url('img/stl-header.jpg'); background-size: cover;" id="intro">	 
+	      <h2 class="top">Fatal Encounters</h2>
+	      <h4 class="container">"No one anywhere comprehensively tracks the most significant act police can do in the line of duty: take a life,” according to the Las Vegas Review-Journal in its series Deadly Force (Nov. 28, 2011).</h3>
+		   <p class="container">The nation's approximately 18,000 police agencies are expected to submit specified categories of crime statistics every year to the FBI's Uniform Crime Reporting program. But inclusion of justifiable homicides is optional.</p>
+	      
+	    </div>
+	    
+	     
+	  <!-- Navbar -->
+	  <div class="navbar">
+	  <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link active" href="#intro">Intro</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#nyc-map">MAP</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#history">History</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#race" >Race</a></li>
+          <li class="navbar-item"><a class="navbar-link pull-right" href="#about" >about</a></li>
+        </ul>
+	  </div>
+	  </div>
+	  
+ <div class="container">
+	
+	 
+     <!-- NYC -->
+	 <div class="docs-section examples" id="nyc-map">
+	 <h6 class="docs-header">New York City</h6>
+	 <div class="row example">
+		 <div id="nycmap" style="height: 600px;"></div>
+			  <script type='text/javascript' src='js/nyc.json'></script>
+			  <script type='text/javascript' src='js/nyc-zip-code.geojson'></script>
+		      <script type='text/javascript' src='js/nyc-map.js'></script>
+		 </div>
+  	</div>
+
+    
+    <!-- NYC Charts -->
+    <div class="docs-section examples" id="history">
+      <h6 class="docs-header">NYC Data</h6>
+      <p>Number of police shooting incidents 1971 to 2013.</p>
+      <div id="shootingChart" style="height: 300px; width: 100%;"></div>
+	 </div>
+	 
+	 <div class="docs-section examples" id="race">
+      <p>Racial breakdown of those killed by police shootings.</p>
+      <div id="raceChart" style="height: 300px; width: 100%;"></div>
+	 </div>
+
+    <!-- Tables 
+ 
+    <div class="row" id="tables">
+      <h6 class="docs-header">More information</h6>
+      <p>Other supporting data from this municipality will go here....</p>
+      <div class="docs-example">
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Sex</th>
+              <th>Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dave Gamache</td>
+              <td>26</td>
+              <td>Male</td>
+              <td>San Francisco</td>
+            </tr>
+            <tr>
+              <td>Dwayne Johnson</td>
+              <td>42</td>
+              <td>Male</td>
+              <td>Hayward</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+ ————————————————————————————————————————————————————— -->    
+      <div class="docs-section examples" id="about">
+      <h6 class="docs-header">about this project</h6>
+      <p>This is a final project for the Visual Storytelling Class with Justin Lloyd in the MICA Information Visualization Master's Degree.</p>
+      <p>This is a final project for the Visual Storytelling Class with Justin Lloyd in the MICA Information Visualization Master's Degree.</p>
+	 </div>
+   
+   </div>
+
+</body>
+</html>
